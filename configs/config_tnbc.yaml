@@ -1,0 +1,70 @@
+celltypes_to_keep:
+  Endothelial: ENDOTHELIAL
+  Tumor: TUMOR
+  Tregs: TCELL/TREG
+  CD4T: TCELL/TREG
+  CD8T: TCELL/TREG
+  CD3T: TCELL/TREG
+  Nk: NK
+  Bcell: BCELL
+  Neutrophil: NEUTROPHIL
+  Macrophage: MACROPHAGE
+  DC: DENDRITIC
+  DC_Mono: MONOCYTE
+  Mono_Neu: MONOCYTE
+channels_to_keep:
+  CD11b: CD11B
+  CD11c: CD11C
+  CD16: CD16
+  CD163: CD163
+  CD20: CD20
+  CD209: CD209
+  CD3: CD3
+  CD31: CD31
+  CD4: CD4
+  CD45: CD45
+  CD45RO: CD45RO
+  CD56: CD56
+  CD63: CD63
+  CD68: CD68
+  CD8: CD8
+  CSF-1R: CSF1R
+  EGFR: EGFR
+  FoxP3: FOXP3
+  HLA-DR: HLAII
+  Lag3: LAG3/CD223
+  MPO: MPO
+  PDL1: PDL1
+  PD1: PD1
+  PanCK: PANCK
+  Vimentin: VIMENTIN
+  OX40: CD134
+channels_to_reject:
+  - dsDNA
+  - H3K27me3
+  - background
+  - P
+  - Keratin17
+  - Ta
+  - Beta-catenin
+  - pS6
+  - C
+  - Au
+  - SMA
+  - p53
+  - Si
+  - Fe
+  - sum_PanCK_CD45
+  - IDO
+  - sum of H3K27me3, H3K9ac, and dsDNA
+  - CD138
+  - B7H3
+  - Na
+  - Keratin6
+  - H3K9ac
+  - Ki67
+  - HLA-Class-1
+  - Ca
+data_dir: data/labels/static/2d/Tissue-Breast/Keren_TNBC_MIBI
+holdout: data/labels/static/2d/Tissue-Breast/Keren_TNBC_MIBI/Point01.npz
+tag: keren_tnbc
