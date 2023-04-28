@@ -30,4 +30,7 @@ python raw_to_dcl.py [/path/to/raw.npz] [/path/to/metadata.yaml.dvc] [/path/to/c
 - Allow user to programatically create a DCL project (ie. with a POST request)
   - This may require changing how DCL creates projects since I think the POST request does not take zip files
 - Integrate deepcell-types model to generate embeddings
-- More command-line arguments and flexibility, eg. for including ground-truth in cellTypes.json
+- More command-line arguments and flexibility, for example:
+  - Including ground-truth in cellTypes.json
+  - Tiling options; tile sizes, whether to create separate projects or same file
+  - Combining _n_ images into a single project
