@@ -28,6 +28,6 @@ python raw_to_dcl.py [/path/to/raw.npz] [/path/to/metadata.yaml.dvc] [/path/to/c
 - Use dimension order in the metadata file to determine how to reorder X.ome.tiff
 - Point to a dvc file instead of an npz file, pull that npz, and then create the project
 - Allow user to programatically create a DCL project (ie. with a POST request)
-  - This may require changing how DCL creates projects since I think the POST request does not take zip files
+  - This may require changing how DCL creates projects since I think the POST request does not take zip files. Alternatively, we migrates some of the code to DCL to handle the processing and zipping on that end.
 - Integrate deepcell-types model to generate embeddings
 - More command-line arguments and flexibility, eg. for including ground-truth in cellTypes.json
