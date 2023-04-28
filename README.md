@@ -34,3 +34,4 @@ python raw_to_dcl.py [/path/to/raw.npz] [/path/to/metadata.yaml.dvc] [/path/to/c
   - Including ground-truth in cellTypes.json
   - Tiling options; tile sizes, whether to create separate projects or same file
   - Combining _n_ images into a single project
+- Tests and exception handling
