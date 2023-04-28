@@ -22,3 +22,11 @@ To use the script, run
 ```bash
 python raw_to_dcl.py [/file/path/to/raw.npz] [/path/to/metadata.yaml.dvc] [/path/to/config.yaml] [output_name.zip]
 ```
+
+## TO-DO
+
+- Use dimension order in the metadata file to determine how to reorder X.ome.tiff
+- Point to a dvc file instead of an npz file, pull that npz, and then create the project
+- Allow user to programatically create a DCL project (ie. with a POST request)
+- Integrate deepcell-types model to generate embeddings
+- More command-line arguments and flexibility, eg. for including ground-truth in cellTypes.json
