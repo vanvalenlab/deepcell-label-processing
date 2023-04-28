@@ -1,0 +1,418 @@
+outs:
+  - md5: b1e7d91c72be8393259ddcabdbf04f94
+    size: 72855236
+    path: Point01.npz
+meta:
+  sample:
+    created_by:
+      Leeat, Keren., Marc, Bosse., Diana, M., Marquez., Roshan, Angoshtari.,
+      Samir, Jain., Sushama, Varma., Soo-Ryum, Yang., Allison, W., Kurian., David,
+      Van, Valen., Robert, B., West., Sean, C., Bendall., Michael, Angelo. (2018).
+      A Structured Tumor-Immune Microenvironment in Triple Negative Breast Cancer
+      Revealed by Multiplexed Ion Beam Imaging. Cell, 174(6):1373-1387.
+    doi: https://doi.org/10.1016/j.cell.2018.08.039
+    date_collected: "2018-09-06"
+    methods:
+      description:
+        The authors leveraged MIBI-TOF to identify salient features of
+        the tumor-immune microenvironment in a retrospective cohort of 41 triple negative
+        breast cancer (TNBC) patients.
+      culture:
+        This study profiles a tissue microarray of 41 TNBC patients treated
+        at Stanford hospital between 2002-2015 (ER and PR positivity less than 1%,
+        HER2 unamplified, and Her2 not 3).
+      labeling:
+        Clinical tissue specimens were placed on a slide and stained overnight
+        using a single master mix of elementally labeled primary antibodies. The antibody
+        panel quantified in situ expression of 36 proteins covering identity, function,
+        and immune regulation.
+      imaging:
+        For each patient sample, a region of 800^2 um^2, 2048x2048 pixels at
+        500 nm resolution, was imaged using a custom designed MIBI-TOF mass spectrometer.
+      fixed: true
+      fixative: "formalin-fixed paraffin-embedded "
+      tissue_specific:
+        tissue_type: breast
+        healthy: false
+        disease_type: triple negative breast cancer
+      slice_thickness: 4.0
+    imaging_params:
+      platform: MIBI
+      magnification: 1X
+      pixel_size: "0.39"
+    channels:
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: Au
+        index: 0
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: B7H3
+        index: 1
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: Beta-catenin
+        index: 2
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: C
+        index: 3
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: CD11b
+        index: 4
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: CD11c
+        index: 5
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: CD138
+        index: 6
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: CD16
+        index: 7
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: CD163
+        index: 8
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: CD20
+        index: 9
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: CD209
+        index: 10
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: CD3
+        index: 11
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: CD31
+        index: 12
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: CD4
+        index: 13
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: CD45
+        index: 14
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: CD45RO
+        index: 15
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: CD56
+        index: 16
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: CD63
+        index: 17
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: CD68
+        index: 18
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: CD8
+        index: 19
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: CSF-1R
+        index: 20
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: Ca
+        index: 21
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: EGFR
+        index: 22
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: Fe
+        index: 23
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: FoxP3
+        index: 24
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - nuclear
+        target: H3K27me3
+        index: 25
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - nuclear
+        target: H3K9ac
+        index: 26
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: HLA-DR
+        index: 27
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: HLA-Class-1
+        index: 28
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: IDO
+        index: 29
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: Keratin17
+        index: 30
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: Keratin6
+        index: 31
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: Ki67
+        index: 32
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: Lag3
+        index: 33
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: MPO
+        index: 34
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: Na
+        index: 35
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: OX40
+        index: 36
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: P
+        index: 37
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: PDL1
+        index: 38
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: PD1
+        index: 39
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: PanCK
+        index: 40
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: SMA
+        index: 41
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: Si
+        index: 42
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: Ta
+        index: 43
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: Vimentin
+        index: 44
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - nuclear
+        target: dsDNA
+        index: 45
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: p53
+        index: 46
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: pS6
+        index: 47
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: background
+        index: 48
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - nuclear
+        target: sum of H3K27me3, H3K9ac, and dsDNA
+        index: 49
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: sum_PanCK_CD45
+        index: 50
+    species: Homo sapiens
+    specimen: breast tumor tissue
+    tissue_region: breast
+    kinetics: static
+    spatial_dim: 2d
+    patient_data:
+      ID: "1"
+      file_path: data/labels/static/2d/Tissue-Breast/Keren_TNBC_MIBI/patient_data.csv.dvc
+      columns:
+        InternalId: patient ID
+        DONOR_NO: ""
+        YEAR: ""
+        ANON_ID_ONCOSHARE: ""
+        AGE_AT_DX: ""
+        YEARDX: ""
+        STAGE: ""
+        SITE_02: ""
+        LATERAL: ""
+        GRADE: ""
+        TCODE_P: ""
+        NCODE_P: ""
+        MCODE_P: ""
+        AJCC_P: ""
+        ER: ""
+        PR: ""
+        HER2NEU: ""
+        CS_TUM_SIZE: ""
+        RESULT_GENE_1: ""
+        RESULT_MUTATION_1: ""
+        TEST_OFFERING_1: ""
+        RESULT_GENE_2: ""
+        RESULT_MUTATION_2: ""
+        TEST_OFFERING_2: ""
+        MYRIAD_TEST_RESULT: ""
+        RECURRENCE_LABEL: ""
+        TIL_score: ""
+        Survival_days_capped*:
+          "* Survival was calculated from date of diagnosis.
+          An end date of 1/1/2016 was used for capping."
+        Censored: ""
+    cell_data:
+      ID: Point01
+      file_path: data/labels/static/2d/Tissue-Breast/Keren_TNBC_MIBI/single_cells.csv.dvc
+      columns:
+        cell_idx: cell ID
+        cell_type_code: integer code for cell type
+        cell_type: cell type
+        sample_name: image ID
+  processed_data_schema:
+    padded: false
+    recommended_for_use: false
+    annotation_types:
+      - nuclear
+      - whole cell
+      - cell types
+    annotation_channels:
+      - annotations:
+          - whole cell
+        index: 0
+        raw_index: 50
+      - annotations:
+          - nuclear
+        index: 1
+        raw_index: 45
+    annotation_progress: Publication data
+    notes:
+      Nuclear segmentation was performed with DeepCell. To generate training
+      data, the channels of dsDNA, H3K27me3 and H3K9ac were summed, to generate a
+      strong and robust nuclear image. Color overlays of the nuclear channel (blue),
+      an immune membrane channel (CD45 and HLA-DR, green), and a cancer membrane/cytosol
+      channel (PanCK and Beta- catenin, red) were also used to guide the manual segmentation
+      in ambiguous cases. Cell borders were defined as a 3-pixel radial expansion
+      around the segmented nuclei.
+    X_bit_depth: 8
+    annotators:
+      - model_path: ../../../../../../models/mesmer/MultiplexSegmentation
+        model_md5: 924642d36f1545afec6d0cc077c1256e.dir
+        application: whole cell
+        name: MultiplexSegmentation
+      - model_path: ../../../../../../models/mesmer/MultiplexSegmentation
+        model_md5: 924642d36f1545afec6d0cc077c1256e.dir
+        application: nuclear
+        name: MultiplexSegmentation
+  file_contents:
+    contents:
+      - X
+      - y
+      - cell_types
+    X:
+      x: 2048
+      y: 2048
+      c: 51
+      b: 1
+      dimension_order: BYXC
+    y:
+      x: 2048
+      y: 2048
+      c: 2
+      b: 1
+      dimension_order: BYXC
+    cell_types:
+      mapper:
+        0: Background
+        1: Unidentified
+        2: Endothelial
+        3: Mesenchyme
+        4: Tumor
+        5: Tregs
+        6: CD4T
+        7: CD8T
+        8: CD3T
+        9: Nk
+        10: Bcell
+        11: Neutrophil
+        12: Macrophage
+        13: DC
+        14: DC_Mono
+        15: Mono_Neu
+        16: Immune_other
+        17: FAILED_HARMONIZATION
