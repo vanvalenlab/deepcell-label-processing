@@ -114,8 +114,8 @@ def tile_and_stack_array(array, size_x, size_y):
                 f"Array of shape {array.shape} cannot be divided equally into tiles of size {size_x} by {size_y}")
         else:
             batches = []
-            for i in range(array.shape[3] / size_x):
-                for j in range(array.shape[2] / size_y):
+            for i in range(int(array.shape[3] / size_x)):
+                for j in range(int(array.shape[2] / size_y)):
                     crop = array[:, 0, i * size_y: i * size_y +
                                  size_y, j * size_x:j*size_x + size_x]
                     batches.append(crop)

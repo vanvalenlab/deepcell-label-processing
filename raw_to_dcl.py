@@ -9,7 +9,7 @@ import zipfile
 import utils
 
 
-def raw_to_dcl(file_path, metadata, config):
+def raw_to_dcl(tile_x, tile_y, file_path, metadata, config):
     """  """
 
     print('Loading raw file...\n')
@@ -29,6 +29,13 @@ def raw_to_dcl(file_path, metadata, config):
 
     print('Making y.ome.tiff...\n')
     y_processed = utils.reshape_y(y)
+
+    if tile_x and tile_y:
+        print("Tiling X and y...")
+        X_processed = utils.tile_and_stack_array(
+            X_processed, int(tile_x), int(tile_y))
+        y_processed = utils.tile_and_stack_array(
+            y_processed, int(tile_x), int(tile_y))
 
     return X_processed, y_processed, cell_types, channels
 
@@ -75,13 +82,15 @@ def dcl_zip(X, y, cell_types, channels):
 
 def main(args):
     X, y, cell_types, kept_channels = raw_to_dcl(
-        args.raw_file_path, args.metadata, args.config)
+        args.tile_x, args.tile_y, args.raw_file_path, args.metadata, args.config)
     dcl_zip(X, y, cell_types, kept_channels)
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         description='Convert input npz into DCL zip')
+    parser.add_argument('--tile_x', '-tx')
+    parser.add_argument('--tile_y', '-ty')
     parser.add_argument('raw_file_path', metavar='./path/to/file',
                         type=str, help='File path of the raw npz file.')
     parser.add_argument('metadata', metavar='./path/to/file',
