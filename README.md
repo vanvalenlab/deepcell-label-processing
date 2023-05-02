@@ -20,7 +20,7 @@ And outputs:
 To use the script, run:
 
 ```bash
-python raw_to_dcl.py [/path/to/raw.npz] [/path/to/metadata.yaml.dvc] [/path/to/config.yaml] [output_name.zip]
+python raw_to_dcl.py [--tile_x WIDTH] [--tile_y HEIGHT] /path/to/raw.npz /path/to/metadata.yaml.dvc /path/to/config.yaml output.zip]
 ```
 
 ## TO-DO

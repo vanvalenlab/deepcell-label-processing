@@ -98,6 +98,6 @@ if __name__ == '__main__':
     parser.add_argument('config', metavar='./path/to/file',
                         type=str, help='File path of the config file')
     parser.add_argument(
-        'output_file', metavar='[name.zip]', type=str, help='Name of the output zip file')
+        'output_file', metavar='name.zip', type=str, help='Name of the output zip file')
     args = parser.parse_args()
     main(args)
