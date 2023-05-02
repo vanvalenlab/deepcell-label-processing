@@ -3,9 +3,11 @@ from tifffile import TiffWriter
 import argparse
 import io
 import json
+import requests
 import zipfile
 
 import utils
+
 
 def raw_to_dcl(file_path, metadata, config):
     """  """
@@ -15,7 +17,7 @@ def raw_to_dcl(file_path, metadata, config):
 
     print('Parsing config file...\n')
     kept_channels = utils.parse_kept_channels(config)
-    
+
     print('Parsing metadata file...\n')
     channel_indices, channels = utils.parse_metadata(metadata, kept_channels)
 
@@ -30,6 +32,7 @@ def raw_to_dcl(file_path, metadata, config):
 
     return X_processed, y_processed, cell_types, channels
 
+
 def dcl_zip(X, y, cell_types, channels):
     """ """
 
@@ -39,38 +42,53 @@ def dcl_zip(X, y, cell_types, channels):
         # Write raw image X to X.ome.tiff
         image = io.BytesIO()
         with TiffWriter(image, ome=True) as tif:
-            metadata={
+            metadata = {
                 'axes': 'CZYX',
                 'Channel': {'Name': channels}
             }
             tif.write(X, metadata=metadata)
         image.seek(0)
         zf.writestr('X.ome.tiff', image.read())
-        
+
         # Write segmentation mask y to y.ome.tiff
         segmentation = io.BytesIO()
         with TiffWriter(segmentation, ome=True) as tif:
             tif.write(y, metadata={'axes': 'CZYX'})
         segmentation.seek(0)
         zf.writestr('y.ome.tiff', segmentation.read())
-        
+
         # Write cellTypes json cell_types_json to cellTypes.json
         cell_types_data = json.dumps(cell_types, indent=2)
         zf.writestr('cellTypes.json', cell_types_data)
-    
+
+    # mf.seek(0)
+    # x = requests.post('http://127.0.0.1:5000/api/project',
+    #                   data={'images': X, 'labels': y, 'axes': 'CZYX'},
+    #                   #   headers={'Content-Type': 'multipart/form-data'},
+    #                   )
+    # print(x.text)
+
     with open(args.output_file, 'wb') as f:
         f.write(mf.getvalue())
         print('Done!')
 
+
 def main(args):
-    X, y, cell_types, kept_channels = raw_to_dcl(args.raw_file_path, args.metadata, args.config)
+    X, y, cell_types, kept_channels = raw_to_dcl(
+        args.raw_file_path, args.metadata, args.config)
     dcl_zip(X, y, cell_types, kept_channels)
 
+
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Convert input npz into DCL zip')
-    parser.add_argument('raw_file_path', metavar='./path/to/file', type=str, help='File path of the raw npz file.')
-    parser.add_argument('metadata', metavar='./path/to/file', type=str, help='File path of the metadata')
-    parser.add_argument('config', metavar='./path/to/file', type=str, help='File path of the config file')
-    parser.add_argument('output_file', metavar='[name.zip]', type=str, help='Name of the output zip file')
+    parser = argparse.ArgumentParser(
+        description='Convert input npz into DCL zip')
+    parser.add_argument('raw_file_path', metavar='./path/to/file',
+                        type=str, help='File path of the raw npz file.')
+    parser.add_argument('metadata', metavar='./path/to/file',
+                        type=str, help='File path of the metadata')
+    parser.add_argument('config', metavar='./path/to/file',
+                        type=str, help='File path of the config file')
+    parser.add_argument(
+        'output_file', metavar='[name.zip]', type=str, help='Name of the output zip file')
     args = parser.parse_args()
     main(args)
