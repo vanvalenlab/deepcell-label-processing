@@ -1,0 +1,52 @@
+celltypes_to_keep:
+  Epithelial: EPITHELIAL
+  Tcell_CD4: TCELL/TREG
+  Fibroblast: FIBROBLAST
+  Tcell_CD8: TCELL/TREG
+  Endothelial: ENDOTHELIAL
+  Tumor: TUMOR
+channels_to_keep:
+  Vimentin: VIMENTIN
+  CD4: CD4
+  CD14: CD14
+  CD45: CD45
+  PD1: PD1
+  CD31: CD31
+  CD11c: CD11C
+  CD68: CD68
+  CD3: CD3
+  CD8: CD8
+  E-cadherin: ECADHERIN
+channels_to_reject:
+  - ATP5A
+  - G6PD
+  - CD36
+  - S6_p
+  - sum_CD45_E-cadherin_Na-K-ATPase
+  - CK
+  - IDH
+  - Histone H3
+  - SMA
+  - GLUT1
+  - SDHA
+  - PKM2
+  - CD57
+  - LDHA
+  - XBP1
+  - HIF1A
+  - CD98
+  - VDAC1
+  - ASCT2
+  - CS
+  - Na-K-ATPase
+  - HK1
+  - CPT1A
+  - NRF2_p
+  - CD39
+  - Ki67
+crop_size: 64
+data_dir: data/labels/static/2d/Tissue-GI/Hartmann_CRC_MIBI
+holdout: data/labels/static/2d/Tissue-GI/Hartmann_CRC_MIBI/21d7_tumor_Point36.npz
+n_jobs: 64
+resize: 32
+tag: hartmann

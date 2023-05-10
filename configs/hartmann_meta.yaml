@@ -1,0 +1,351 @@
+outs:
+  - md5: ff81b3c64806383512f76c8d05eaa10e
+    size: 12293938
+    path: 21d7_tumor_Point21.npz
+meta:
+  sample:
+    created_by:
+      Hartmann, F.J., Mrdjen, D., McCaffrey, E. et al. Single-cell metabolic
+      profiling of human cytotoxic T cells. Nat Biotechnol 39, 186–197 (2021).
+    doi: https://doi.org/10.1038/s41587-020-0651-8
+    date_collected: '2020-08-31'
+    methods:
+      description:
+        The authors used MIBI-TOF to explore spatial metabolic states in
+        colorectal carcinoma and control colon tissue samples.
+      culture:
+        FFPE tissue samples of colorectal carcinoma and healthy colon tissue
+        were obtained from the tissue repository of the Stanford Department of Pathology.
+      labeling:
+        36 antibodies were used to determine cell lineage, subset and activation
+        status, and metabolic characteristics.
+      imaging:
+        Quantitative imaging was performed using a custom-designed MIBI-TOF
+        mass spectrometer (IonPath) with an image size of 400 um2 and 1,024 x 1,024
+        pixels. The entire cohort of 58 FOVs was acquired over a 24-h period of continuous
+        imaging, yielding a total of 2,088 single-channel images.
+      fixed: true
+      fixative: formalin-fixed paraffin-embedded
+      tissue_specific:
+        tissue_type: GI
+        healthy: false
+        disease_type: colorectal carcinoma
+    imaging_params:
+      platform: MIBI-TOF
+      magnification: 1X
+      pixel_size: '0.39'
+    channels:
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - nuclear
+        target: Histone H3
+        index: 0
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: Vimentin
+        index: 1
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - cytoplasm marker
+        target: SMA
+        index: 2
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - membrane
+        target: CD98
+        index: 3
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - nuclear
+        target: NRF2_p
+        index: 4
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: CD4
+        index: 5
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: CD14
+        index: 6
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: CD45
+        index: 7
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: PD1
+        index: 8
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: CD31
+        index: 9
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - cytoplasm marker
+        target: SDHA
+        index: 10
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - nuclear
+        target: Ki67
+        index: 11
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - cytoplasm marker
+        target: CS
+        index: 12
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - cytoplasm marker
+        target: S6_p
+        index: 13
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: CD11c
+        index: 14
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: CD68
+        index: 15
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - membrane
+        target: CD36
+        index: 16
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - cytoplasm marker
+        target: ATP5A
+        index: 17
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: CD3
+        index: 18
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - membrane
+        target: CD39
+        index: 19
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - cytoplasm marker
+        target: VDAC1
+        index: 20
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - cytoplasm marker
+        target: G6PD
+        index: 21
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - nuclear
+        target: XBP1
+        index: 22
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: PKM2
+        index: 23
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - membrane
+        target: ASCT2
+        index: 24
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - membrane
+        target: GLUT1
+        index: 25
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: CD8
+        index: 26
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - whole cell
+        target: CD57
+        index: 27
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - cytoplasm marker
+        target: LDHA
+        index: 28
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - cytoplasm marker
+        target: IDH
+        index: 29
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - cytoplasm marker
+        target: HK1
+        index: 30
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - cytoplasm marker
+        target: E-cadherin
+        index: 31
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - cytoplasm marker
+        target: CPT1A
+        index: 32
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - cytoplasm marker
+        target: CK
+        index: 33
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - membrane
+        target: Na-K-ATPase
+        index: 34
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - nuclear
+        target: HIF1A
+        index: 35
+      - imaging_modality: MIBI-TOF
+        channel_purpose:
+          - membrane
+        target: sum_CD45_E-cadherin_Na-K-ATPase
+        index: 36
+    species: Homo sapiens
+    tissue_region: colon
+    kinetics: static
+    spatial_dim: 2d
+    patient_data:
+      ID: 21d7
+      file_path: data/labels/static/2d/Tissue-GI/Hartmann_CRC_MIBI/patient_data.csv.dvc
+      columns:
+        ID: patient ID
+        Experiment: ''
+        Tissue: ''
+        Age: ''
+        Sex: ''
+        Diagnosis: ''
+        Details: ''
+    cell_data:
+      ID: '21'
+      file_path: data/labels/static/2d/Tissue-GI/Hartmann_CRC_MIBI/single_cells.csv.dvc
+      columns:
+        row_num: ''
+        point: image ID
+        cell_id: cell label
+        H3: ''
+        vimentin: ''
+        SMA: ''
+        CD98: ''
+        NRF2p: ''
+        CD4: ''
+        CD14: ''
+        CD45: ''
+        PD1: ''
+        CD31: ''
+        SDHA: ''
+        Ki67: ''
+        CS: ''
+        S6p: ''
+        CD11c: ''
+        CD68: ''
+        CD36: ''
+        ATP5A: ''
+        CD3: ''
+        CD39: ''
+        VDAC1: ''
+        G6PD: ''
+        XBP1: ''
+        PKM2: ''
+        ASCT2: ''
+        GLUT1: ''
+        CD8: ''
+        CD57: ''
+        LDHA: ''
+        IDH2: ''
+        HK1: ''
+        Ecad: ''
+        CPT1A: ''
+        CK: ''
+        NaKATPase: ''
+        HIF1A: ''
+        X1: ''
+        center_rowcoord: ''
+        center_colcoord: ''
+        cell_size: ''
+        category: ''
+        donor: ''
+        Cluster: cell type cluster
+        Cluster_Code: integer code for cell type cluster
+  processed_data_schema:
+    padded: false
+    recommended_for_use: false
+    annotation_types:
+      - nuclear
+      - whole cell
+      - cell types
+    annotation_channels:
+      - annotations:
+          - whole cell
+        index: 0
+        raw_index: 36
+      - annotations:
+          - nuclear
+        index: 1
+        raw_index: 0
+    annotation_progress: Publication data
+    notes:
+      MIBI-TOF images have undergone noise removal as described in Keren et al.
+      (2018) Cell. Segmentation masks for MIBI-TOF data contain large non-cellular
+      regions that need to be removed during downstream processing MIBI-TOF derived
+      single-cell data is cell size normalized, arcsinh transformed and percentile
+      normalized and contains manually annotated FlowSOM clustering results.
+    annotators:
+      - model_path: ../../../../../../models/mesmer/MultiplexSegmentation
+        model_md5: 924642d36f1545afec6d0cc077c1256e.dir
+        application: whole cell
+        name: MultiplexSegmentation
+      - model_path: ../../../../../../models/mesmer/MultiplexSegmentation
+        model_md5: 924642d36f1545afec6d0cc077c1256e.dir
+        application: nuclear
+        name: MultiplexSegmentation
+  file_contents:
+    contents:
+      - X
+      - y
+      - cell_types
+    X:
+      x: 1024
+      y: 1024
+      c: 37
+      b: 1
+      dimension_order: BYXC
+    y:
+      x: 1024
+      y: 1024
+      c: 2
+      b: 1
+      dimension_order: BYXC
+    cell_types:
+      mapper:
+        0: Background
+        1: Imm_other
+        2: Epithelial
+        3: Tcell_CD4
+        4: Myeloid_CD68
+        5: Fibroblast
+        6: Tcell_CD8
+        7: Endothelial
+        8: Myeloid_CD11c
+        9: Tumor
+        10: Unspecified
+        11: FAILED_HARMONIZATION

@@ -25,7 +25,8 @@ def raw_to_dcl(tile_x, tile_y, file_path, metadata, config):
     cell_types = utils.make_empty_cell_types()
 
     print('Making X.ome.tiff...\n')
-    X_processed = utils.normalize_raw(utils.reshape_X(X, channel_indices))
+    X_processed = utils.equalize_adapthist(
+        utils.normalize_raw(utils.reshape_X(X, channel_indices)))
 
     print('Making y.ome.tiff...\n')
     y_processed = utils.reshape_y(y)
