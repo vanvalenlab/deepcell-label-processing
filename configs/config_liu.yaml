@@ -1,0 +1,45 @@
+celltypes_to_keep:
+  B_cell: BCELL
+  Epithelial: EPITHELIAL
+  Endothelial: ENDOTHELIAL
+  T_cell: TCELL/TREG
+  Macrophage: MACROPHAGE
+  Fibroblast: FIBROBLAST
+  DC: DENDRITIC
+  NK_cell: NK
+channels_to_keep:
+  CD20: CD20
+  CD3: CD3
+  CD4: CD4
+  CD68: CD68
+  HLA-DR: HLAII
+  CD11c: CD11C
+  CD31: CD31
+  CD45: CD45
+  CD56: CD56
+  CD8: CD8
+  PanCK: PANCK
+  Vimentin: VIMENTIN
+channels_to_reject:
+  - HLA class I and Na-K-ATPase
+  - PAX5
+  - sum_PanCK_CD45
+  - dsDNA
+  - B-tubulin
+crop_size: 64
+data_dir:
+  - data/labels/static/2d/Tissue-Breast/Liu_Validation_MIBI
+  - data/labels/static/2d/Tissue-GI/Liu_Validation_MIBI
+  - data/labels/static/2d/Tissue-Immune/Liu_Validation_MIBI
+  - data/labels/static/2d/Tissue-Lymph_Node/Liu_Validation_MIBI
+  - data/labels/static/2d/Tissue-Musculoskeletal/Liu_Validation_MIBI
+  - data/labels/static/2d/Tissue-Renal/Liu_Validation_MIBI
+  - data/labels/static/2d/Tissue-Reproductive/Liu_Validation_MIBI
+  - data/labels/static/2d/Tissue-Skin/Liu_Validation_MIBI
+  - data/labels/static/2d/Tissue-Spleen/Liu_Validation_MIBI
+  - data/labels/static/2d/Tissue-Thymus/Liu_Validation_MIBI
+  - data/labels/static/2d/Tissue-Tonsil/Liu_Validation_MIBI
+holdout: data/labels/static/2d/Tissue-Breast/Liu_Validation_MIBI/Slide23Stain2_Point24_R6C10.npz
+n_jobs: 64
+resize: 32
+tag: liu

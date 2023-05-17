@@ -38,12 +38,12 @@ def parse_metadata(metadata_file, kept_channels):
         channels = []
         channel_indices = []
         metadata = yaml.safe_load(stream)
-        # mapper = metadata['meta']['file_contents']['cell_types']['mapper']
+        mapper = metadata['meta']['file_contents']['cell_types']['mapper']
         for channel in metadata['meta']['sample']['channels']:
             if channel['target'] in kept_channels:
                 channels.append(kept_channels[channel['target']])
                 channel_indices.append(channel['index'])
-    return channel_indices, channels
+    return channel_indices, channels, mapper
 
 
 def parse_groundtruth(cell_types, mapper):

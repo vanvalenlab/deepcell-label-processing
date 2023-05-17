@@ -9,24 +9,31 @@ import zipfile
 import utils
 
 
-def raw_to_dcl(tile_x, tile_y, file_path, metadata, config):
+def raw_to_dcl(tile_x, tile_y, ground_truth, file_path, metadata, config):
     """  """
 
     print('Loading raw file...\n')
-    X, y = utils.load_raw(file_path)
+    if ground_truth:
+        print('Loading ground truth...\n')
+        X, y, cell_types = utils.load_raw(file_path, ground_truth=True)
+    else:
+        X, y = utils.load_raw(file_path)
 
     print('Parsing config file...\n')
     kept_channels = utils.parse_kept_channels(config)
 
     print('Parsing metadata file...\n')
-    channel_indices, channels = utils.parse_metadata(metadata, kept_channels)
+    channel_indices, channels, mapper = utils.parse_metadata(
+        metadata, kept_channels)
 
     print('Making cellTypes.json...\n')
-    cell_types = utils.make_empty_cell_types()
+    if ground_truth:
+        cell_types = utils.parse_groundtruth(cell_types, mapper)
+    else:
+        cell_types = utils.make_empty_cell_types()
 
     print('Making X.ome.tiff...\n')
-    X_processed = utils.equalize_adapthist(
-        utils.normalize_raw(utils.reshape_X(X, channel_indices)))
+    X_processed = utils.normalize_raw(utils.reshape_X(X, channel_indices))
 
     print('Making y.ome.tiff...\n')
     y_processed = utils.reshape_y(y)
@@ -83,7 +90,7 @@ def dcl_zip(X, y, cell_types, channels):
 
 def main(args):
     X, y, cell_types, kept_channels = raw_to_dcl(
-        args.tile_x, args.tile_y, args.raw_file_path, args.metadata, args.config)
+        args.tile_x, args.tile_y, args.ground_truth, args.raw_file_path, args.metadata, args.config)
     dcl_zip(X, y, cell_types, kept_channels)
 
 
@@ -92,6 +99,7 @@ if __name__ == '__main__':
         description='Convert input npz into DCL zip')
     parser.add_argument('--tile_x', '-tx')
     parser.add_argument('--tile_y', '-ty')
+    parser.add_argument('--ground_truth', '-g', action='store_true')
     parser.add_argument('raw_file_path', metavar='./path/to/file',
                         type=str, help='File path of the raw npz file.')
     parser.add_argument('metadata', metavar='./path/to/file',
