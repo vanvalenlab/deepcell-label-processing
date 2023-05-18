@@ -3,3 +3,4 @@ tifffile
 scikit-image
 pyyaml
 requests
+thefuzz

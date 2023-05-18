@@ -9,7 +9,7 @@ import zipfile
 import utils
 
 
-def raw_to_dcl(tile_x, tile_y, ground_truth, file_path, metadata, config):
+def raw_to_dcl(tile_x, tile_y, ground_truth, marker_positivity, file_path, metadata, config):
     """  """
 
     print('Loading raw file...\n')
@@ -27,16 +27,19 @@ def raw_to_dcl(tile_x, tile_y, ground_truth, file_path, metadata, config):
         metadata, kept_channels)
 
     print('Making cellTypes.json...\n')
-    if ground_truth:
+    if marker_positivity:
+        cell_types = utils.make_empty_marker_positivity(channels)
+    elif ground_truth:
         cell_types = utils.parse_groundtruth(cell_types, mapper)
     else:
         cell_types = utils.make_empty_cell_types()
 
     print('Making X.ome.tiff...\n')
-    X_processed = utils.normalize_raw(utils.reshape_X(X, channel_indices))
+    X_processed = utils.equalize_adapthist(
+        utils.normalize_raw(utils.reshape_X(X, channel_indices)))
 
     print('Making y.ome.tiff...\n')
-    y_processed = utils.reshape_y(y)
+    y_processed = utils.to_int32(utils.reshape_y(y))
 
     if tile_x and tile_y:
         print("Tiling X and y...")
@@ -90,7 +93,7 @@ def dcl_zip(X, y, cell_types, channels):
 
 def main(args):
     X, y, cell_types, kept_channels = raw_to_dcl(
-        args.tile_x, args.tile_y, args.ground_truth, args.raw_file_path, args.metadata, args.config)
+        args.tile_x, args.tile_y, args.ground_truth, args.marker_positivity, args.raw_file_path, args.metadata, args.config)
     dcl_zip(X, y, cell_types, kept_channels)
 
 
@@ -100,11 +103,12 @@ if __name__ == '__main__':
     parser.add_argument('--tile_x', '-tx')
     parser.add_argument('--tile_y', '-ty')
     parser.add_argument('--ground_truth', '-g', action='store_true')
-    parser.add_argument('raw_file_path', metavar='./path/to/file',
+    parser.add_argument('--marker_positivity', '-mp', action='store_true')
+    parser.add_argument('raw_file_path', metavar='./raw_path',
                         type=str, help='File path of the raw npz file.')
-    parser.add_argument('metadata', metavar='./path/to/file',
+    parser.add_argument('metadata', metavar='./meta_path',
                         type=str, help='File path of the metadata')
-    parser.add_argument('config', metavar='./path/to/file',
+    parser.add_argument('config', metavar='./config_path',
                         type=str, help='File path of the config file')
     parser.add_argument(
         'output_file', metavar='name.zip', type=str, help='Name of the output zip file')

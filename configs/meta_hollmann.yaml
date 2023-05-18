@@ -1,0 +1,200 @@
+outs:
+  - md5: bdf2760e75a7e32982e77b222d4f8b13
+    size: 7706602
+    path: Codex_Tnsl__4900-3600__.npz
+meta:
+  sample:
+    created_by:
+      Aleynick, N., Li, Y., Xie, Y. et al. Cross-platform dataset of multiplex
+      fluorescent cellular object image annotations. Sci Data 10, 193 (2023).
+    doi: https://doi.org/10.1038/s41597-023-02108-z
+    date_collected: '2023-04-07'
+    methods:
+      description:
+        105,774 primarily oncological cellular annotations concentrating
+        on tumor and immune cells using over 40 antibody markers spanning three fluorescent
+        imaging platforms, over a dozen tissue types and across various cellular morphologies
+      imaging: Cyclical IF with narrowband capture (Akoya CODEX)
+      fixed: true
+      fixative: formalin
+      fixation_method: FFPE
+      tissue_specific:
+        tissue_type: Tonsil
+        healthy: true
+    imaging_params:
+      platform: CODEX
+      microscope: Keyence, BZ-810
+      magnification: 20X
+      pixel_size: '0.37760'
+    channels:
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: DAPI
+        cycle: 1
+        index: 0
+        protein: true
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: DAPI
+        cycle: 2
+        index: 1
+        protein: true
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD4
+        cycle: 2
+        index: 2
+        protein: true
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: DAPI
+        cycle: 3
+        index: 3
+        protein: true
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD8
+        cycle: 3
+        index: 4
+        protein: true
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD3e
+        cycle: 3
+        index: 5
+        protein: true
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD20
+        cycle: 3
+        index: 6
+        protein: true
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: DAPI
+        cycle: 4
+        index: 7
+        protein: true
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: Ki67
+        cycle: 4
+        index: 8
+        protein: true
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: HLA-DR
+        cycle: 4
+        index: 9
+        protein: true
+      - imaging_modality: CODEX
+        channel_purpose:
+          - cytoplasm marker
+        target: panCK
+        cycle: 4
+        index: 10
+        protein: true
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: DAPI
+        cycle: 5
+        index: 11
+        protein: true
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD68
+        cycle: 5
+        index: 12
+        protein: true
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD31
+        cycle: 5
+        index: 13
+        protein: true
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: DAPI
+        cycle: 6
+        index: 14
+        protein: true
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD45RO
+        cycle: 6
+        index: 15
+        protein: true
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD11c
+        cycle: 6
+        index: 16
+        protein: true
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: DAPI
+        cycle: 7
+        index: 17
+        protein: true
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD21
+        cycle: 7
+        index: 18
+        protein: true
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: DAPI
+        cycle: 8
+        index: 19
+        protein: true
+    species: Homo sapiens
+    specimen: Tonsil normal tissue
+    kinetics: static
+    spatial_dim: 2d
+  processed_data_schema:
+    padded: false
+    recommended_for_use: true
+    annotation_types:
+      - whole cell
+    annotation_channels:
+      - annotations:
+          - whole cell
+        index: 0
+    annotation_progress: Publication data
+    notes: Manually annotated in ImageJ and checked by pathologist
+  file_contents:
+    contents:
+      - X
+      - y
+    X:
+      x: 400
+      y: 400
+      c: 20
+      b: 1
+      dimension_order: BYXC
+    y:
+      x: 400
+      y: 400
+      c: 1
+      b: 1
+      dimension_order: BYXC

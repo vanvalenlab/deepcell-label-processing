@@ -1,0 +1,12 @@
+channels_to_keep:
+  CD11c: CD11C
+  CD20: CD20
+  CD21: CD21
+  CD31: CD31
+  CD3e: CD3
+  CD4: CD4
+  CD45RO: CD45RO
+  CD68: CD68
+  CD8: CD8
+  HLA-DR: HLAII
+  panCK: PANCK

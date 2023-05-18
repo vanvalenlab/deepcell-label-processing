@@ -38,7 +38,10 @@ def parse_metadata(metadata_file, kept_channels):
         channels = []
         channel_indices = []
         metadata = yaml.safe_load(stream)
-        mapper = metadata['meta']['file_contents']['cell_types']['mapper']
+        try:
+            mapper = metadata['meta']['file_contents']['cell_types']['mapper']
+        except:
+            mapper = None
         for channel in metadata['meta']['sample']['channels']:
             if channel['target'] in kept_channels:
                 channels.append(kept_channels[channel['target']])
@@ -85,6 +88,15 @@ def make_empty_cell_types():
     return cell_types_json
 
 
+def make_empty_marker_positivity(channels):
+    """ Construct cellTypes.json for a marker positivity job """
+    cell_types_json = []
+    for i in range(len(channels)):
+        cell_types_json.append({'id': i + 1, 'cells': [], 'color': constants.COLOR_MAP[(i - 1) % len(constants.COLOR_MAP)],
+                                'name': channels[i], 'feature': 0})
+    return cell_types_json
+
+
 def parse_embeddings(preds_embedding, cell_indices):
     """ Construct embeddings.json array from deepcell-types output """
     embeddings = np.zeros((np.max(cell_indices) + 1, preds_embedding[0].size))
@@ -123,6 +135,11 @@ def tile_and_stack_array(array, size_x, size_y):
             return tiled
     except Exception as e:
         print(e)
+
+
+def to_int32(y):
+    """ Change dtype to int32 """
+    return y.astype('int32')
 
 
 def normalize_raw(X):
