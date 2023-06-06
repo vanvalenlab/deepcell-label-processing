@@ -1,0 +1,515 @@
+outs:
+  - md5: 0d38fc609756cf2498ff0015d6e4caa7
+    size: 405839340
+    path: 7155.npz
+meta:
+  sample:
+    created_by:
+      Zhang, W., Li, I., Reticker-Flynn, N.E. et al. Identification of cell
+      types in multiplexed in situ images by combining protein expression and spatial
+      information using CELESTA. Nat Methods 19, 759–769 (2022).
+    doi: https://doi.org/10.1038/s41592-022-01498-z
+    date_collected: '2022-06-02'
+    methods:
+      description:
+        This dataset consists of CODEX images of head and neck squamous
+        cell carcinoma. These images were used to demonstrate the performance of CELESTA,
+        an unsupervised machine learning algorithm for cell type identification.
+      culture:
+        The tissue cohort is comprised of eight primary HNSCC tumors associated
+        with (N+) and without (N0) lymph node metastasis. See Methods--Human tumor
+        specimens.
+      labeling: Cell types were assigned with CELESTA.
+      imaging:
+        Imaging was performed with 52 markers with an Akoya CODEX instrument.
+        Hoechst nuclear stain (1;3,000 final concentration) was imaged in each cycle
+        at an exposure time of 1/175 s. Each tissue was imaged with a x20 objective
+        in a 7x9 tiled acquisition at 1,386x1,008 pixels per tile and a resolution
+        of 396 nm per pixel, with 13 z-planes per tile (axial resolution 1,500 nm).
+        Images were chosen with the best focus from the z-planes, and out-of-focus
+        light was removed using deconvolution. See Methods--CODEX Image Acquisition.
+      tissue_specific:
+        tissue_type: primary head and neck squamous cell carcinoma tumor
+        healthy: false
+        disease_type: head and neck squamous cell carcinoma
+    imaging_params:
+      platform: CODEX
+      magnification: 20X
+      pixel_size: '0.396'
+    channels:
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: HOECHST
+        cycle: 1
+        index: 0
+      - imaging_modality: CODEX
+        channel_purpose:
+          - whole cell
+        target: Vimentin
+        cycle: 1
+        index: 1
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD19
+        cycle: 1
+        index: 2
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD31
+        cycle: 1
+        index: 3
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: HOECHST
+        cycle: 2
+        index: 4
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD85j
+        cycle: 2
+        index: 5
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: HLA-DR
+        cycle: 2
+        index: 6
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: Ki67
+        cycle: 2
+        index: 7
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: HOECHST
+        cycle: 3
+        index: 8
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD15
+        cycle: 3
+        index: 9
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: PDL1
+        cycle: 3
+        index: 10
+      - imaging_modality: CODEX
+        channel_purpose:
+          - cytoplasm marker
+        target: FAP
+        cycle: 3
+        index: 11
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: HOECHST
+        cycle: 4
+        index: 12
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD21
+        cycle: 4
+        index: 13
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD3
+        cycle: 4
+        index: 14
+      - imaging_modality: CODEX
+        channel_purpose:
+          - cytoplasm marker
+        target: CTLA4
+        cycle: 4
+        index: 15
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: HOECHST
+        cycle: 5
+        index: 16
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD4
+        cycle: 5
+        index: 17
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD69
+        cycle: 5
+        index: 18
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD2
+        cycle: 5
+        index: 19
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: HOECHST
+        cycle: 6
+        index: 20
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD66
+        cycle: 6
+        index: 21
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD57
+        cycle: 6
+        index: 22
+      - imaging_modality: CODEX
+        channel_purpose:
+          - cytoplasm marker
+        target: Podoplanin
+        cycle: 6
+        index: 23
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: HOECHST
+        cycle: 7
+        index: 24
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD8
+        cycle: 7
+        index: 25
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: HIF1A
+        cycle: 7
+        index: 26
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: Collagen IV
+        cycle: 7
+        index: 27
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: HOECHST
+        cycle: 8
+        index: 28
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD11c
+        cycle: 8
+        index: 29
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD154
+        cycle: 8
+        index: 30
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD56
+        cycle: 8
+        index: 31
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: HOECHST
+        cycle: 9
+        index: 32
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD54
+        cycle: 9
+        index: 33
+      - imaging_modality: CODEX
+        channel_purpose:
+          - whole cell
+        target: IgM
+        cycle: 9
+        index: 34
+      - imaging_modality: CODEX
+        channel_purpose:
+          - whole cell
+        target: MMP12
+        cycle: 9
+        index: 35
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: HOECHST
+        cycle: 10
+        index: 36
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD7
+        cycle: 10
+        index: 37
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD36
+        cycle: 10
+        index: 38
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD9
+        cycle: 10
+        index: 39
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: HOECHST
+        cycle: 11
+        index: 40
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: gdTCR
+        cycle: 11
+        index: 41
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD1c
+        cycle: 11
+        index: 42
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD49f
+        cycle: 11
+        index: 43
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: HOECHST
+        cycle: 12
+        index: 44
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD38
+        cycle: 12
+        index: 45
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD45
+        cycle: 12
+        index: 46
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD16
+        cycle: 12
+        index: 47
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: HOECHST
+        cycle: 13
+        index: 48
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD25
+        cycle: 13
+        index: 49
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: FOXP3
+        cycle: 13
+        index: 50
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD123
+        cycle: 13
+        index: 51
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: HOECHST
+        cycle: 14
+        index: 52
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD40
+        cycle: 14
+        index: 53
+      - imaging_modality: CODEX
+        channel_purpose:
+          - cytoplasm marker
+        target: panCK
+        cycle: 14
+        index: 54
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: HLA-ABC
+        cycle: 14
+        index: 55
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: HOECHST
+        cycle: 15
+        index: 56
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD45RA
+        cycle: 15
+        index: 57
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD90
+        cycle: 15
+        index: 58
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD127
+        cycle: 15
+        index: 59
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: HOECHST
+        cycle: 16
+        index: 60
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD278
+        cycle: 16
+        index: 61
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CXCR5
+        cycle: 16
+        index: 62
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: HOECHST
+        cycle: 17
+        index: 63
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD117
+        cycle: 17
+        index: 64
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: glucose transporter
+        cycle: 17
+        index: 65
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: HOECHST
+        cycle: 18
+        index: 66
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD5
+        cycle: 18
+        index: 67
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD279
+        cycle: 18
+        index: 68
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: HOECHST
+        cycle: 19
+        index: 69
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: CD273
+        cycle: 19
+        index: 70
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: HOECHST
+        cycle: 20
+        index: 71
+      - imaging_modality: CODEX
+        channel_purpose:
+          - nuclear
+        target: HOECHST
+        cycle: 21
+        index: 72
+      - imaging_modality: CODEX
+        channel_purpose:
+          - membrane
+        target: biotinylated CD39
+        cycle: 21
+        index: 73
+    species: Homo sapiens
+    specimen: primary head and neck squamous cell carcinoma tumor
+    kinetics: static
+    spatial_dim: 2d
+    patient_data:
+      ID: SCC7155
+      file_path: data/labels/static/2d/Tissue-Skin/Weiruo_HNSCC_CODEX/patient_data.csv.dvc
+    cell_data:
+      ID: SCC7155
+      file_path: data/labels/static/2d/Tissue-Skin/Weiruo_HNSCC_CODEX/7155_annotation.csv.dvc
+  processed_data_schema:
+    padded: false
+    recommended_for_use: false
+    annotation_types:
+      - whole cell
+    annotation_channels:
+      - annotations:
+          - whole cell
+        index: 0
+    annotation_progress: Publication data
+    notes:
+      Segmented data was generated using the segmentation algorithm from Akoya
+      Biosciences in the FCS format.
+  file_contents:
+    contents:
+      - X
+    X:
+      x: 2070
+      y: 2070
+      c: 74
+      b: 1
+      dimension_order: BYXC

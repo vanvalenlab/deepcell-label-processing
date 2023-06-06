@@ -1,0 +1,405 @@
+outs:
+  - md5: a3255df5df019b71c4b065b8dc6f8155
+    size: 892161447
+    path: 111_TMA11.npz
+meta:
+  sample:
+    created_by:
+      Schapiro, D., Sokolov, A., Yapp, C. et al. MCMICRO -- a scalable,
+      modular image-processing pipeline for multiplexed tissue imaging. Nat Methods
+      19, 311–315 (2022).
+    doi: https://doi.org/10.1101/2021.03.15.435473
+    date_collected: '2021-11-25'
+    methods:
+      description:
+        The EMIT (Exemplar Microscopy Images of Tissues and Tumors) dataset
+        was generated to accelerate benchmarking and training of MCMICRO, which is
+        a computational pipeline for performing the sequential steps needed to transform
+        large, multi-channel whole slide images into single-cell data. This dataset
+        comprises of multiplexed images of a TMA with 120 1.5 mm cores.
+      culture:
+        The TMA contains cores from 34 cancer, non-neoplastic diseases, and
+        normal tissues collected from clinical discards under an IRB-supervised protocol.
+        Two 1.5-mm-diameter cores were acquired from each of 60 tissue regions with
+        the goal of acquiring one or two examples of as many tumors as possible (with
+        matched normal tissue from the same resection when that was feasible), as
+        well as several non-neoplastic medical diseases involving acute inflammation
+        (for example diverticulitis and appendicitis), and secondary lymphoid tissues
+        such as tonsil, spleen and lymph nodes. Overall, the TMA contained 120 cores
+        plus 3 additional ‘marker cores’, which are cores added to the TMA in a manner
+        that makes it possible to orient the TMA in images.
+      imaging:
+        The TMA was imaged using the cyclic immunofluorescence (CyCIF) method
+        described in Lin et al 2018. Data were collected with a 20X magnification,
+        0.75 NA objective with 2x2-pixel binning using two multiplex antibody panels
+        (64 channels for section 11 “TMA11” vs 40 channels for section 12 “TMA22”).
+      fixed: true
+      fixative: formalin-fixed paraffin-embedded
+      tissue_specific:
+        tissue_type: Tonsil
+        healthy: true
+    imaging_params:
+      platform: t-CyCIF
+      magnification: 20X
+      na: '0.75'
+      binning: 2x2
+      pixel_size: '0.65'
+    channels:
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: DNA1
+        index: 0
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - whole cell
+        target: Rabbit IgG
+        index: 1
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - whole cell
+        target: Goat IgG
+        index: 2
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - whole cell
+        target: Mouse IgG
+        index: 3
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: DNA2
+        index: 4
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: chREBP
+        index: 5
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - whole cell
+        target: Mast Cell Chymase
+        index: 6
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - whole cell
+        target: MBP
+        index: 7
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: DNA3
+        index: 8
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - cytoplasm marker
+        target: E-cadherin
+        index: 9
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - cytoplasm marker
+        target: PanCK
+        index: 10
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - whole cell
+        target: CD45
+        index: 11
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: DNA4
+        index: 12
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - whole cell
+        target: CD4
+        index: 13
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - whole cell
+        target: CD3d
+        index: 14
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - whole cell
+        target: CD8a
+        index: 15
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: DNA5
+        index: 16
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: Phospho-c-Jun
+        index: 17
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - whole cell
+        target: cleaved Caspase-3
+        index: 18
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: IRF3
+        index: 19
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: DNA6
+        index: 20
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: NUP133
+        index: 21
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - whole cell
+        target: Calponin
+        index: 22
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: NUP98
+        index: 23
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: DNA7
+        index: 24
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: LMNB1
+        index: 25
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: IRF3
+        index: 26
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - whole cell
+        target: CD45R
+        index: 27
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: DNA8
+        index: 28
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: IRF3
+        index: 29
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: PML
+        index: 30
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - membrane
+        target: GLUT1
+        index: 31
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: DNA9
+        index: 32
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: Lamin A/C
+        index: 33
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - whole cell
+        target: CD1B
+        index: 34
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - whole cell
+        target: HSP27
+        index: 35
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: DNA10
+        index: 36
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - whole cell
+        target: GAPDH
+        index: 37
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - cytoplasm marker
+        target: HSP90
+        index: 38
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - whole cell
+        target: S100A11
+        index: 39
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: DNA11
+        index: 40
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: TDP43
+        index: 41
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - whole cell
+        target: OGT
+        index: 42
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - membrane
+        target: Collagen IV
+        index: 43
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: DNA12
+        index: 44
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - cytoplasm marker
+        target: FCERG1A
+        index: 45
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - whole cell
+        target: SQSTM1
+        index: 46
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: LMNB2
+        index: 47
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: DNA13
+        index: 48
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - whole cell
+        target: HSP70
+        index: 49
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: Ki67
+        index: 50
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: pH2AX
+        index: 51
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: DNA14
+        index: 52
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - cytoplasm marker
+        target: SEC61A
+        index: 53
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - membrane
+        target: EPCAM
+        index: 54
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - whole cell
+        target: CD86
+        index: 55
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: DNA15
+        index: 56
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: Lamin A/C
+        index: 57
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - cytoplasm marker
+        target: E-cadherin
+        index: 58
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: Ki67
+        index: 59
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: DNA16
+        index: 60
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - nuclear
+        target: Lamin B Receptor
+        index: 61
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - whole cell
+        target: VEGFR2
+        index: 62
+      - imaging_modality: t-CyCIF
+        channel_purpose:
+          - cytoplasm marker
+        target: G-tubulin
+        index: 63
+    species: Homo sapiens
+    specimen: Tonsil
+    tissue_region: tonsil
+    kinetics: static
+    spatial_dim: 2d
+  processed_data_schema:
+    padded: false
+    recommended_for_use: false
+    annotation_types:
+      - nuclear
+      - whole cell
+    annotation_channels:
+      - annotations:
+          - nuclear
+        index: 0
+      - annotations:
+          - whole cell
+        index: 1
+    annotation_progress: Publication data
+    notes:
+      Segmentation masks of cells and nucleis were computed with UnMicst, a deep
+      learning model based on a UNet architecture.
+  file_contents:
+    contents:
+      - X
+      - y
+    X:
+      x: 3007
+      y: 3007
+      c: 64
+      b: 1
+      dimension_order: BYXC
+    y:
+      x: 3007
+      y: 3007
+      c: 2
+      b: 1
+      dimension_order: BYXC

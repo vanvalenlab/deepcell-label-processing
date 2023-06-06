@@ -20,6 +20,12 @@ channels_to_keep:
   CD8: CD8
   PanCK: PANCK
   Vimentin: VIMENTIN
+  HLA class I and Na-K-ATPase: HLA-I/Na-K-ATPase
+  dsDNA: dsDNA
+  PAX5: PAX5
+  sum_PanCK_CD45: sum_PanCK_CD45
+  B-tubulin: B-tubulin
+
 channels_to_reject:
   - HLA class I and Na-K-ATPase
   - PAX5

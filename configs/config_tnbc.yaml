@@ -39,6 +39,8 @@ channels_to_keep:
   PanCK: PANCK
   Vimentin: VIMENTIN
   OX40: CD134
+  dsDNA: dsDNA
+  sum_PanCK_CD45: sum_PanCK_CD45
 channels_to_reject:
   - dsDNA
   - H3K27me3

@@ -1,0 +1,8 @@
+channels_to_keep:
+  CD3d: CD3
+  CD4: CD4
+  CD45: CD45
+  CD45R: CD45RA
+  CD8a: CD8
+  E-cadherin: ECADHERIN
+  PanCK: PANCK
