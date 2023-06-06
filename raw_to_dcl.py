@@ -9,8 +9,26 @@ import zipfile
 import utils
 
 
-def raw_to_dcl(tile_x, tile_y, ground_truth, marker_positivity, clahe, file_path, metadata, config):
-    """  """
+def raw_to_dcl(tile_x, tile_y, tile_center, ground_truth, marker_positivity, clahe, file_path, metadata, config):
+    """Converts raw npz file into DCL zip file.
+
+    Args:
+        tile_x (int): tile size in x direction
+        tile_y (in): tile size in y direction
+        tile_center (bool): whether or not to tile around the center
+        ground_truth (bool): whether or not to use ground truth
+        marker_positivity (bool): whether or not to set up a marker positivity style project
+        clahe (bool): whether or not to use CLAHE normalization
+        file_path (str): file path to raw npz file
+        metadata (str): file path to metadata file
+        config (str): file path to config file
+
+    Returns:
+        X_processed (np.array): processed raw image
+        y_processed (np.array): processed segmentation mask
+        cell_types (list): cell types json
+        channels (list): list of channels
+    """
 
     print('Loading raw file...\n')
     if ground_truth:
@@ -44,7 +62,11 @@ def raw_to_dcl(tile_x, tile_y, ground_truth, marker_positivity, clahe, file_path
     print('Making y.ome.tiff...\n')
     y_processed = utils.to_int32(utils.reshape_y(y))
 
-    if tile_x and tile_y:
+    if tile_center and tile_x and tile_y:
+        print("Tiling X and y around center...")
+        X_processed = utils.tile_around_center(X_processed, tile_center, tile_x, tile_y)
+        y_processed = utils.tile_around_center(y_processed, tile_center, tile_x, tile_y)
+    elif tile_x and tile_y:
         print("Tiling X and y...")
         X_processed = utils.tile_and_stack_array(
             X_processed, int(tile_x), int(tile_y))
@@ -55,7 +77,14 @@ def raw_to_dcl(tile_x, tile_y, ground_truth, marker_positivity, clahe, file_path
 
 
 def dcl_zip(X, y, cell_types, channels):
-    """ """
+    """Zips up X, y, and cellTypes.json into a DCL zip file.
+
+    Args:
+        X (np.array): raw image
+        y (np.array): segmentation mask
+        cell_types (list): cell types json
+        channels (list): list of channels
+    """
 
     print('Zipping everything up...\n')
     mf = io.BytesIO()
@@ -82,12 +111,13 @@ def dcl_zip(X, y, cell_types, channels):
         cell_types_data = json.dumps(cell_types, indent=2)
         zf.writestr('cellTypes.json', cell_types_data)
 
-    # mf.seek(0)
-    # x = requests.post('http://127.0.0.1:5000/api/project',
-    #                   data={'images': X, 'labels': y, 'axes': 'CZYX'},
-    #                   #   headers={'Content-Type': 'multipart/form-data'},
-    #                   )
-    # print(x.text)
+        # TODO: Create project through DCL API
+        # mf.seek(0)
+        # x = requests.post('http://127.0.0.1:5000/api/project',
+        #                   data={'images': X, 'labels': y, 'axes': 'CZYX'},
+        #                   #   headers={'Content-Type': 'multipart/form-data'},
+        #                   )
+        # print(x.text)
 
     with open(args.output_file, 'wb') as f:
         f.write(mf.getvalue())
@@ -96,7 +126,7 @@ def dcl_zip(X, y, cell_types, channels):
 
 def main(args):
     X, y, cell_types, kept_channels = raw_to_dcl(
-        args.tile_x, args.tile_y, args.ground_truth, args.marker_positivity, args.clahe, args.raw_file_path, args.metadata, args.config)
+        args.tile_x, args.tile_y, args.tile_center, args.ground_truth, args.marker_positivity, args.clahe, args.raw_file_path, args.metadata, args.config)
     dcl_zip(X, y, cell_types, kept_channels)
 
 
@@ -105,6 +135,7 @@ if __name__ == '__main__':
         description='Convert input npz into DCL zip')
     parser.add_argument('--tile_x', '-tx')
     parser.add_argument('--tile_y', '-ty')
+    parser.add_argument('--tile_center', '-tc')
     parser.add_argument('--ground_truth', '-g', action='store_true')
     parser.add_argument('--marker_positivity', '-mp', action='store_true')
     parser.add_argument('--clahe', '-c', action='store_true')

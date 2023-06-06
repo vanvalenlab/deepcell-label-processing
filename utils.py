@@ -115,6 +115,22 @@ def reshape_y(y):
     return y.transpose(3, 0, 1, 2)
 
 
+def tile_around_center(array, num_tiles, size_x, size_y):
+    """ Given an array with dimension order (C,T,Y,X), crop a square of size num_tiles * size_x by num_tiles * size_y around the center of the X,Y array,
+        then crop that square into num_tiles * num_tiles tiles of size size_x by size_y and stack the arrays along the T axis and return """
+    center_x = int(array.shape[3] / 2)
+    center_y = int(array.shape[2] / 2)
+    crop = array[:, :, center_y - int(num_tiles * size_y / 2):center_y + int(num_tiles * size_y / 2),
+                 center_x - int(num_tiles * size_x / 2):center_x + int(num_tiles * size_x / 2)]
+    batches = []
+    for i in range(num_tiles):
+        for j in range(num_tiles):
+            batches.append(crop[:, 0, i * size_y: i * size_y +
+                                size_y, j * size_x:j*size_x + size_x])
+    print(batches)
+    return np.moveaxis(np.stack(batches), 0, 1)
+    
+
 def tile_and_stack_array(array, size_x, size_y):
     """ Try to tile and stack an array into tiles of size (size_x, size_y) if possible """
     try:
