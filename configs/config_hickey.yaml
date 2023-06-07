@@ -1,0 +1,80 @@
+celltypes_to_keep:
+  Enterocyte: EPITHELIAL
+  M2 Macrophage: MACROPHAGE
+  Plasma: BCELL
+  B: BCELL
+  CD4+ T cell: TCELL/TREG
+  Endothelial: ENDOTHELIAL
+  Goblet: EPITHELIAL
+  DC: DENDRITIC
+  Neutrophil: NEUTROPHIL
+  CD66+ Enterocyte: EPITHELIAL
+  M1 Macrophage: MACROPHAGE
+  NK: NK
+  CD57+ Enterocyte: EPITHELIAL
+  MUC1+ Enterocyte: EPITHELIAL
+  CD8+ T: TCELL/TREG
+  CD7+ Immune: TCELL/TREG
+channels_to_keep:
+  CD25: CD25
+  Vimentin: VIMENTIN
+  NKG2D: NKG2D
+  CD7: CD7
+  CD4: CD4
+  CD19: CD19
+  CD11c: CD11C
+  CD16: CD16
+  HLA-DR: HLAII
+  CD3: CD3
+  CD45RO: CD45RO
+  CD38: CD38
+  CD127: CD127
+  FAP: FAP
+  CD68: CD68
+  CD31: CD31
+  CD56: CD56
+  CD69: CD69
+  CD8: CD8
+  CD49a: CD49a
+  CD45: CD45
+  CD44: CD44
+  panCK: PANCK
+  CD163: CD163
+  CD206: CD206
+channels_to_reject:
+- Mucin-2
+- CDX2
+- CD90
+- CD21
+- CD36
+- Intelectin-1
+- c-kit
+- alpha defensin 5
+- sum_panCK_CD45
+- CD66
+- Chromogranin A
+- SMA
+- SOX9
+- CD34
+- KLRB1
+- Olfactomedin-4
+- Bcl-2
+- Syndecan-1
+- Collagen IV
+- Podoplanin
+- CD57
+- CD123
+- CD49f
+- HOECHST
+- Mucin-6
+- Mucin-1
+- Ki67
+- CD15
+- DRAQ5
+- Synaptophysin
+crop_size: 64
+data_dir: data/labels/static/2d/Tissue-GI/Hickey_Colon_CODEX/
+holdout: data/labels/static/2d/Tissue-GI/Hickey_Colon_CODEX/B009A_reg001.npz
+n_jobs: 8
+resize: 32
+tag: hickey

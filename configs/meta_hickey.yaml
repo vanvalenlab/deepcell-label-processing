@@ -1,0 +1,586 @@
+outs:
+- md5: 87ab6a8b5698764ab16de1d9c3ef7479
+  size: 9917607788
+  path: B009A_reg001.npz
+meta:
+  sample:
+    created_by: Hickey et al. High Resolution Single Cell Maps Reveals Distinct Cell
+      Organization and Function Across Different Regions of the Human Intestine. biorxiv
+      preprint.
+    doi: https://doi.org/10.1101/2021.11.25.469203
+    date_collected: '2021-11-25'
+    methods:
+      description: This dataset consists of CODEX images of 8 intestinal sites from
+        each of 4 donors.
+      culture: Imaging data was collected from four human donors, each of whom constitutes
+        a dataset. Each dataset includes two arrays of tissues that were imaged together
+        on the same coverslip with four tissues per array -- colon (sigmoid, descending,
+        transverse, and ascending), and small intestine (ileum, mid-jejunum, proximal
+        jejunum, duodenum). Arrays were constructed on the cryostat and sectioned
+        at a width of 7 um.
+      labeling: Cell types were assigned with X-shift (github.com/nolanlab/vortex)
+        and STELLAR. For more detail, see "Methods -- Cell Type Analysis" section
+        of paper.
+      imaging: Imaging was performed with a Keyence BZ-X710 microscope. Pixel size
+        is 0.377 um per pixel.
+      tissue_specific:
+        tissue_type: Transverse colon
+        healthy: true
+    imaging_params:
+      platform: CODEX
+      microscope: Keyence BZ-X710
+      magnification: 20X
+      na: '0.75'
+      pixel_size: '0.377'
+    channels:
+    - imaging_modality: CODEX
+      channel_purpose:
+      - nuclear
+      target: HOECHST
+      cycle: 1
+      index: 0
+    - imaging_modality: CODEX
+      channel_purpose:
+      - nuclear
+      target: HOECHST
+      cycle: 2
+      index: 1
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: Mucin-1
+      cycle: 2
+      index: 2
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: CD25
+      cycle: 2
+      index: 3
+    - imaging_modality: CODEX
+      channel_purpose:
+      - nuclear
+      target: CDX2
+      cycle: 2
+      index: 4
+    - imaging_modality: CODEX
+      channel_purpose:
+      - nuclear
+      target: HOECHST
+      cycle: 3
+      index: 5
+    - imaging_modality: CODEX
+      channel_purpose:
+      - whole cell
+      target: Vimentin
+      cycle: 3
+      index: 6
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: CD57
+      cycle: 3
+      index: 7
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: NKG2D
+      cycle: 3
+      index: 8
+    - imaging_modality: CODEX
+      channel_purpose:
+      - nuclear
+      target: HOECHST
+      cycle: 4
+      index: 9
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: CD7
+      cycle: 4
+      index: 10
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: CD4
+      cycle: 4
+      index: 11
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: CD19
+      cycle: 4
+      index: 12
+    - imaging_modality: CODEX
+      channel_purpose:
+      - nuclear
+      target: HOECHST
+      cycle: 5
+      index: 13
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: Intelectin-1
+      cycle: 5
+      index: 14
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: CD11c
+      cycle: 5
+      index: 15
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: KLRB1
+      cycle: 5
+      index: 16
+    - imaging_modality: CODEX
+      channel_purpose:
+      - nuclear
+      target: HOECHST
+      cycle: 6
+      index: 17
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: Synaptophysin
+      cycle: 6
+      index: 18
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: CD34
+      cycle: 6
+      index: 19
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: CD16
+      cycle: 6
+      index: 20
+    - imaging_modality: CODEX
+      channel_purpose:
+      - nuclear
+      target: HOECHST
+      cycle: 7
+      index: 21
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: CD15
+      cycle: 7
+      index: 22
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: HLA-DR
+      cycle: 7
+      index: 23
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: CD123
+      cycle: 7
+      index: 24
+    - imaging_modality: CODEX
+      channel_purpose:
+      - nuclear
+      target: HOECHST
+      cycle: 8
+      index: 25
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: CD66
+      cycle: 8
+      index: 26
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: CD3
+      cycle: 8
+      index: 27
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: CD45RO
+      cycle: 8
+      index: 28
+    - imaging_modality: CODEX
+      channel_purpose:
+      - nuclear
+      target: HOECHST
+      cycle: 9
+      index: 29
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: CD38
+      cycle: 9
+      index: 30
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: CD90
+      cycle: 9
+      index: 31
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: CD127
+      cycle: 9
+      index: 32
+    - imaging_modality: CODEX
+      channel_purpose:
+      - nuclear
+      target: HOECHST
+      cycle: 10
+      index: 33
+    - imaging_modality: CODEX
+      channel_purpose:
+      - cytoplasm marker
+      target: SMA
+      cycle: 10
+      index: 34
+    - imaging_modality: CODEX
+      channel_purpose:
+      - whole cell
+      target: c-kit
+      cycle: 10
+      index: 35
+    - imaging_modality: CODEX
+      channel_purpose:
+      - cytoplasm marker
+      target: FAP
+      cycle: 10
+      index: 36
+    - imaging_modality: CODEX
+      channel_purpose:
+      - nuclear
+      target: HOECHST
+      cycle: 11
+      index: 37
+    - imaging_modality: CODEX
+      channel_purpose:
+      - whole cell
+      target: Mucin-2
+      cycle: 11
+      index: 38
+    - imaging_modality: CODEX
+      channel_purpose:
+      - cytoplasm marker
+      target: Chromogranin A
+      cycle: 11
+      index: 39
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: CD68
+      cycle: 11
+      index: 40
+    - imaging_modality: CODEX
+      channel_purpose:
+      - nuclear
+      target: HOECHST
+      cycle: 12
+      index: 41
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: Collagen IV
+      cycle: 12
+      index: 42
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: CD21
+      cycle: 12
+      index: 43
+    - imaging_modality: CODEX
+      channel_purpose:
+      - cytoplasm marker
+      target: Mucin-6
+      cycle: 12
+      index: 44
+    - imaging_modality: CODEX
+      channel_purpose:
+      - nuclear
+      target: HOECHST
+      cycle: 13
+      index: 45
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: CD31
+      cycle: 13
+      index: 46
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: CD56
+      cycle: 13
+      index: 47
+    - imaging_modality: CODEX
+      channel_purpose:
+      - nuclear
+      target: HOECHST
+      cycle: 14
+      index: 48
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: CD36
+      cycle: 14
+      index: 49
+    - imaging_modality: CODEX
+      channel_purpose:
+      - nuclear
+      target: Ki67
+      cycle: 14
+      index: 50
+    - imaging_modality: CODEX
+      channel_purpose:
+      - nuclear
+      target: HOECHST
+      cycle: 15
+      index: 51
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: CD69
+      cycle: 15
+      index: 52
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: Syndecan-1
+      cycle: 15
+      index: 53
+    - imaging_modality: CODEX
+      channel_purpose:
+      - nuclear
+      target: HOECHST
+      cycle: 16
+      index: 54
+    - imaging_modality: CODEX
+      channel_purpose:
+      - nuclear
+      target: SOX9
+      cycle: 16
+      index: 55
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: CD8
+      cycle: 16
+      index: 56
+    - imaging_modality: CODEX
+      channel_purpose:
+      - nuclear
+      target: HOECHST
+      cycle: 17
+      index: 57
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: CD49a
+      cycle: 17
+      index: 58
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: CD49f
+      cycle: 17
+      index: 59
+    - imaging_modality: CODEX
+      channel_purpose:
+      - nuclear
+      target: HOECHST
+      cycle: 18
+      index: 60
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: CD45
+      cycle: 18
+      index: 61
+    - imaging_modality: CODEX
+      channel_purpose:
+      - cytoplasm marker
+      target: Bcl-2
+      cycle: 18
+      index: 62
+    - imaging_modality: CODEX
+      channel_purpose:
+      - nuclear
+      target: HOECHST
+      cycle: 19
+      index: 63
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: CD44
+      cycle: 19
+      index: 64
+    - imaging_modality: CODEX
+      channel_purpose:
+      - cytoplasm marker
+      target: Podoplanin
+      cycle: 19
+      index: 65
+    - imaging_modality: CODEX
+      channel_purpose:
+      - nuclear
+      target: HOECHST
+      cycle: 20
+      index: 66
+    - imaging_modality: CODEX
+      channel_purpose:
+      - cytoplasm marker
+      target: panCK
+      cycle: 20
+      index: 67
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: CD163
+      cycle: 20
+      index: 68
+    - imaging_modality: CODEX
+      channel_purpose:
+      - nuclear
+      target: HOECHST
+      cycle: 21
+      index: 69
+    - imaging_modality: CODEX
+      channel_purpose:
+      - whole cell
+      target: Olfactomedin-4
+      cycle: 21
+      index: 70
+    - imaging_modality: CODEX
+      channel_purpose:
+      - membrane
+      target: CD206
+      cycle: 21
+      index: 71
+    - imaging_modality: CODEX
+      channel_purpose:
+      - nuclear
+      target: HOECHST
+      cycle: 22
+      index: 72
+    - imaging_modality: CODEX
+      channel_purpose:
+      - whole cell
+      target: alpha defensin 5
+      cycle: 22
+      index: 73
+    - imaging_modality: CODEX
+      channel_purpose:
+      - nuclear
+      target: HOECHST
+      cycle: 23
+      index: 74
+    - imaging_modality: CODEX
+      channel_purpose:
+      - nuclear
+      target: HOECHST
+      cycle: 24
+      index: 75
+    - imaging_modality: CODEX
+      channel_purpose:
+      - nuclear
+      target: DRAQ5
+      cycle: 24
+      index: 76
+    - imaging_modality: CODEX
+      channel_purpose:
+      - cytoplasm marker
+      target: sum_panCK_CD45
+      cycle: 20
+      index: 77
+    species: Homo sapiens
+    specimen: intestine
+    kinetics: static
+    spatial_dim: 2d
+    cell_data:
+      ID: B009A_reg001
+      file_path: data/labels/static/2d/Tissue-GI/Hickey_Colon_CODEX/single_cells.csv.dvc
+  processed_data_schema:
+    padded: false
+    recommended_for_use: false
+    annotation_types:
+    - nuclear
+    - whole cell
+    - cell types
+    annotation_channels:
+    - annotations:
+      - whole cell
+      index: 0
+      raw_index: 77
+    - annotations:
+      - nuclear
+      index: 1
+      raw_index: 0
+    annotation_progress: Preprint
+    notes: Segmentation was performed with the CODEX Segmenter or CellVisionSegmenter,
+      a watershed-based single-cell segmentation algorithm and a neural network R-CNN-based
+      single-cell segmentation algorithm respectively.
+    annotators:
+    - model_path: ../../../../../../models/mesmer/MultiplexSegmentation
+      model_md5: 924642d36f1545afec6d0cc077c1256e.dir
+      application: whole cell
+      name: MultiplexSegmentation
+    - model_path: ../../../../../../models/mesmer/MultiplexSegmentation
+      model_md5: 924642d36f1545afec6d0cc077c1256e.dir
+      application: nuclear
+      name: MultiplexSegmentation
+  file_contents:
+    contents:
+    - X
+    - y
+    - cell_types
+    X:
+      x: 9408
+      y: 9072
+      c: 78
+      b: 1
+      dimension_order: BYXC
+    y:
+      x: 9408
+      y: 9072
+      c: 2
+      b: 1
+      dimension_order: BYXC
+    cell_types:
+      mapper:
+        0: Background
+        1: Stroma
+        2: Smooth muscle
+        3: Enterocyte
+        4: M2 Macrophage
+        5: Plasma
+        6: B
+        7: Cycling TA
+        8: Lymphatic
+        9: ICC
+        10: CD8+ T
+        11: CD4+ T cell
+        12: Endothelial
+        13: Goblet
+        14: TA
+        15: DC
+        16: Neutrophil
+        17: Nerve
+        18: Unspecified
+        19: CD66+ Enterocyte
+        20: M1 Macrophage
+        21: NK
+        22: Neuroendocrine
+        23: Paneth
+        24: CD7+ Immune
+        25: CD57+ Enterocyte
+        26: MUC1+ Enterocyte
+        27: FAILED_HARMONIZATION

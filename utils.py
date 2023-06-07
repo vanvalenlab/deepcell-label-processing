@@ -116,8 +116,8 @@ def reshape_y(y):
 
 
 def tile_around_center(array, num_tiles, size_x, size_y):
-    """ Given an array with dimension order (C,T,Y,X), crop a square of size num_tiles * size_x by num_tiles * size_y around the center of the X,Y array,
-        then crop that square into num_tiles * num_tiles tiles of size size_x by size_y and stack the arrays along the T axis and return """
+    """ Given an array with dimension order (C,T,Y,X), crop a rectangle of size (num_tiles * size_x) by (num_tiles * size_y) around the center of the X,Y array,
+        then crop that square into (num_tiles * num_tiles) tiles of size (size_x, size_y), and finally stack the arrays along the T axis and return """
     center_x = int(array.shape[3] / 2)
     center_y = int(array.shape[2] / 2)
     crop = array[:, :, center_y - int(num_tiles * size_y / 2):center_y + int(num_tiles * size_y / 2),
@@ -132,7 +132,7 @@ def tile_around_center(array, num_tiles, size_x, size_y):
     
 
 def tile_and_stack_array(array, size_x, size_y):
-    """ Try to tile and stack an array into tiles of size (size_x, size_y) if possible """
+    """ Try to exactly crop and stack an array into tiles of size (size_x, size_y) if possible """
     try:
         if array.shape[2] % size_y != 0:
             raise Exception(
