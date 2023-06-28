@@ -127,7 +127,6 @@ def tile_around_center(array, num_tiles, size_x, size_y):
         for j in range(num_tiles):
             batches.append(crop[:, 0, i * size_y: i * size_y +
                                 size_y, j * size_x:j*size_x + size_x])
-    print(batches)
     return np.moveaxis(np.stack(batches), 0, 1)
     
 

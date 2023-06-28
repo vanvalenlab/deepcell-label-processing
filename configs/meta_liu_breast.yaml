@@ -1,0 +1,220 @@
+outs:
+- md5: d80f35e0e5d939de7cec93d7150ec599
+  size: 6533020
+  path: Slide21Stain1_Point11_R6C10.npz
+meta:
+  sample:
+    created_by: Liu, C.C., Bosse, M., Kong, A. et al. Reproducible, high-dimensional
+      imaging in archival human tissue by multiplexed ion beam imaging by time-of-flight
+      (MIBI-TOF). Lab Invest 102, 762–770 (2022).
+    doi: https://doi.org/10.1038/s41374-022-00778-8
+    date_collected: '2022-03-29'
+    methods:
+      description: This data comes from a MIBI-TOF validation study with a staining
+        panel of 16 antibodies.
+      culture: A TMA was constructed using human FFPE blocks from Stanford Pathology.
+        The TMA consisted of disease-free controls as well as multiple types of carcinomas,
+        sarcomas, and central nervous system lesions.
+      imaging: Imaging was performed using a MIBI-TOF instrument (IonPath) with a
+        Hyperion ion source. Area normalized Xe+ primary ion dose of 9 nA*hr*mm−2
+        was used for all image acquisitions. Field size was 500 by 500 um, image size
+        is 1024 by 1024 pixels.
+      fixed: true
+      fixative: formalin-fixed paraffin-embedded
+      tissue_specific:
+        tissue_type: Breast
+        healthy: false
+        disease_type: Breast ductal carcinoma
+    imaging_params:
+      platform: MIBI-TOF
+      magnification: 1X
+      pixel_size: '0.49'
+    channels:
+    - imaging_modality: MIBI-TOF
+      channel_purpose:
+      - nuclear
+      target: B-tubulin
+      index: 0
+    - imaging_modality: MIBI-TOF
+      channel_purpose:
+      - whole cell
+      target: CD20
+      index: 1
+    - imaging_modality: MIBI-TOF
+      channel_purpose:
+      - whole cell
+      target: CD3
+      index: 2
+    - imaging_modality: MIBI-TOF
+      channel_purpose:
+      - whole cell
+      target: CD4
+      index: 3
+    - imaging_modality: MIBI-TOF
+      channel_purpose:
+      - whole cell
+      target: CD68
+      index: 4
+    - imaging_modality: MIBI-TOF
+      channel_purpose:
+      - nuclear
+      target: dsDNA
+      index: 5
+    - imaging_modality: MIBI-TOF
+      channel_purpose:
+      - whole cell
+      target: HLA-DR
+      index: 6
+    - imaging_modality: MIBI-TOF
+      channel_purpose:
+      - nuclear
+      target: PAX5
+      index: 7
+    - imaging_modality: MIBI-TOF
+      channel_purpose:
+      - whole cell
+      target: CD11c
+      index: 8
+    - imaging_modality: MIBI-TOF
+      channel_purpose:
+      - whole cell
+      target: CD31
+      index: 9
+    - imaging_modality: MIBI-TOF
+      channel_purpose:
+      - whole cell
+      target: CD45
+      index: 10
+    - imaging_modality: MIBI-TOF
+      channel_purpose:
+      - whole cell
+      target: CD56
+      index: 11
+    - imaging_modality: MIBI-TOF
+      channel_purpose:
+      - whole cell
+      target: CD8
+      index: 12
+    - imaging_modality: MIBI-TOF
+      channel_purpose:
+      - cytoplasm marker
+      target: PanCK
+      index: 13
+    - imaging_modality: MIBI-TOF
+      channel_purpose:
+      - whole cell
+      target: Vimentin
+      index: 14
+    - imaging_modality: MIBI-TOF
+      channel_purpose:
+      - membrane
+      target: HLA class I and Na-K-ATPase
+      index: 15
+    - imaging_modality: MIBI-TOF
+      channel_purpose:
+      - cytoplasm marker
+      target: sum_PanCK_CD45
+      index: 16
+    species: Homo sapiens
+    kinetics: static
+    spatial_dim: 2d
+    cell_data:
+      ID: 201007_Slide21Stain1Run_shuffled_4b_Point11_R6C10
+      file_path: data/labels/static/2d/Tissue-Breast/Liu_Validation_MIBI/single_cells.csv.dvc
+      columns:
+        phenotype_num: integer code for cell type
+        phenotype: cell type
+        cluster: ''
+        cell_size: ''
+        CD11c: ''
+        CD20: ''
+        CD3: ''
+        CD31: ''
+        CD4: ''
+        CD45: ''
+        CD56: ''
+        CD68: ''
+        CD8: ''
+        HLA DR: ''
+        HLA class 1 A, B, and C, Na-K-ATPase alpha1: ''
+        PANCK: ''
+        PAX5: ''
+        Vimentin: ''
+        beta-tubulin: ''
+        dsDNA: ''
+        label: cell ID
+        area: ''
+        eccentricity: ''
+        major_axis_length: ''
+        minor_axis_length: ''
+        perimeter: ''
+        convex_area: ''
+        equivalent_diameter: ''
+        centroid-0: ''
+        centroid-1: ''
+        major_minor_axis_ratio: ''
+        perim_square_over_area: ''
+        major_axis_equiv_diam_ratio: ''
+        convex_hull_resid: ''
+        centroid_dif: ''
+        num_concavities: ''
+        fov: image ID
+  processed_data_schema:
+    padded: false
+    recommended_for_use: false
+    annotation_types:
+    - nuclear
+    - whole cell
+    - cell types
+    annotation_channels:
+    - annotations:
+      - whole cell
+      index: 0
+      raw_index: 16
+    - annotations:
+      - nuclear
+      index: 1
+      raw_index: 5
+    annotation_progress: Publication data
+    notes: Cell segmentation was performed using the pre-trained Mesmer convolutional
+      neural network architecture (Greenwald et al. 2021). For input to the network,
+      dsDNA was the nuclear marker and HLA class I and Na-K-ATPase were the membrane
+      markers.
+    annotators:
+    - model_path: ../../../../../../models/mesmer/MultiplexSegmentation
+      model_md5: 924642d36f1545afec6d0cc077c1256e.dir
+      application: whole cell
+      name: MultiplexSegmentation
+    - model_path: ../../../../../../models/mesmer/MultiplexSegmentation
+      model_md5: 924642d36f1545afec6d0cc077c1256e.dir
+      application: nuclear
+      name: MultiplexSegmentation
+  file_contents:
+    contents:
+    - X
+    - y
+    - cell_types
+    X:
+      x: 1024
+      y: 1024
+      c: 17
+      b: 1
+      dimension_order: BYXC
+    y:
+      x: 1024
+      y: 1024
+      c: 2
+      b: 1
+      dimension_order: BYXC
+    cell_types:
+      mapper:
+        0: Background
+        1: B_cell
+        2: Epithelial
+        3: Endothelial
+        4: T_cell
+        5: Macrophage
+        6: Fibroblast
+        7: DC
+        8: NK_cell
+        9: FAILED_HARMONIZATION
