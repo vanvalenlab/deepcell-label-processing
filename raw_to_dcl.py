@@ -41,14 +41,13 @@ def raw_to_dcl(tile_x, tile_y, tile_center, ground_truth, marker_positivity, cla
     print('Parsing config file...\n')
     kept_channels = utils.parse_kept_channels(config)
 
-    print('Parsing metadata file...\n')
-    channel_indices, channels, mapper = utils.parse_metadata(
-        metadata, kept_channels)
-
     print('Making cellTypes.json...\n')
     if marker_positivity:
+        channel_indices, channels, mapper = utils.get_all_channels(metadata)
         cell_types = utils.make_empty_marker_positivity(channels)
     elif ground_truth:
+        channel_indices, channels, mapper = utils.parse_metadata(
+            metadata, kept_channels)
         cell_types = utils.parse_groundtruth(cell_types, mapper)
     else:
         cell_types = utils.make_empty_cell_types()
@@ -65,8 +64,10 @@ def raw_to_dcl(tile_x, tile_y, tile_center, ground_truth, marker_positivity, cla
 
     if tile_center and tile_x and tile_y:
         print("Tiling X and y around center...")
-        X_processed = utils.tile_around_center(X_processed, int(tile_center), int(tile_x), int(tile_y))
-        y_processed = utils.tile_around_center(y_processed, int(tile_center), int(tile_x), int(tile_y))
+        X_processed = utils.tile_around_center(
+            X_processed, int(tile_center), int(tile_x), int(tile_y))
+        y_processed = utils.tile_around_center(
+            y_processed, int(tile_center), int(tile_x), int(tile_y))
     elif tile_x and tile_y:
         print("Tiling X and y...")
         X_processed = utils.tile_and_stack_array(
@@ -112,16 +113,13 @@ def dcl_zip(X, y, cell_types, channels, output_file):
         cell_types_data = json.dumps(cell_types, indent=2)
         zf.writestr('cellTypes.json', cell_types_data)
 
-        # TODO: Create project through DCL API
-        # mf.seek(0)
-        # x = requests.post('http://127.0.0.1:5000/api/project',
-        #                   data={'images': X, 'labels': y, 'axes': 'CZYX'},
-        #                   #   headers={'Content-Type': 'multipart/form-data'},
-        #                   )
-        # print(x.text)
-
-    with open(output_file, 'wb') as f:
+    with open(output_file, 'r+b') as f:
         f.write(mf.getvalue())
+        x = requests.post('http://label-dev.deepcell.org/api/project/dropped',
+                          files={'images': mf.getvalue()},
+                          data={'axes': 'CZYX'},
+                          )
+        print(x.text)
         print('Done!')
 
 

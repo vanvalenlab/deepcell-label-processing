@@ -49,6 +49,22 @@ def parse_metadata(metadata_file, kept_channels):
     return channel_indices, channels, mapper
 
 
+def get_all_channels(metadata_file):
+    """ Obtain relevant channel indices and cell type mapper from metadata file """
+    with open(metadata_file, 'r') as stream:
+        channels = []
+        channel_indices = []
+        metadata = yaml.safe_load(stream)
+        try:
+            mapper = metadata['meta']['file_contents']['cell_types']['mapper']
+        except:
+            mapper = None
+        for channel in metadata['meta']['sample']['channels']:
+            channels.append(channel['target'])
+            channel_indices.append(channel['index'])
+    return channel_indices, channels, mapper
+
+
 def parse_groundtruth(cell_types, mapper):
     """ Construct cellTypes.json from ground truth cell types mapping """
     cell_types_json = []
@@ -128,7 +144,7 @@ def tile_around_center(array, num_tiles, size_x, size_y):
             batches.append(crop[:, 0, i * size_y: i * size_y +
                                 size_y, j * size_x:j*size_x + size_x])
     return np.moveaxis(np.stack(batches), 0, 1)
-    
+
 
 def tile_and_stack_array(array, size_x, size_y):
     """ Try to exactly crop and stack an array into tiles of size (size_x, size_y) if possible """
